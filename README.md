@@ -6,7 +6,7 @@ Additionally, the lack of dynamic demand forecasting and adaptive reorder polici
 
 Inventory Analysis Project – One Year Weekly Analysis (2019–2020)
 📋 Project Overview
-This project presents a comprehensive one-year inventory analysis conducted on weekly basis from 18 June 2019 to 18 June 2020. The objective was to analyze inventory performance, classify products using ABC-XYZ analysis, identify critical inventory issues, and provide actionable recommendations for inventory policy and forecasting.
+This project presents a comprehensive one-year inventory analysis conducted on weekly basis from 18 June 2019 to 18 June 2020. <br>The objective was to analyze inventory performance, classify products using ABC-XYZ analysis, identify critical inventory issues, and provide actionable recommendations for inventory policy and forecasting.
 
 🎯 Objectives of the paper
 
