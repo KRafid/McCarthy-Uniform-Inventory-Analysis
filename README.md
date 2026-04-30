@@ -91,4 +91,9 @@ Power BI (DAX for calculations and visualizations)
 Data Modeling (Star Schema / Relationships on SKU_ID)
 Statistical Analysis (Mean, Standard Deviation, Coefficient of Variation)
 ABC-XYZ Inventory Classification Framework
-Time Series Forecasting with Seasonality****
+Time Series Forecasting with Seasonality
+
+
+
+Image -https://github.com/KRafid/McCarthy-Uniform-Inventory-Analysis/blob/main/Dashboard%20%20Snapshot.png
+
