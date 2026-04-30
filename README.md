@@ -4,85 +4,91 @@ McCarthy Uniforms generates strong annual revenue from private school uniforms a
 The problem is further intensified by long supplier lead times (30–90 days), as products are manufactured overseas. This makes it difficult to respond quickly to demand fluctuations. The current inventory strategy does not effectively differentiate between high-value, fast-moving items and low-demand products, leading to both overstocking and stockouts.
 Additionally, the lack of dynamic demand forecasting and adaptive reorder policies creates a mismatch between supply and actual demand patterns. As a result, the company struggles to maintain optimal inventory levels, impacting service levels, revenue potential, and operational efficiency.
 
-Inventory Analysis Project (June 2019 – June 2020)
-Overview
+Inventory Analysis Project – One Year Weekly Analysis (2019–2020)
+📋 Project Overview
+This project presents a comprehensive one-year inventory analysis conducted on weekly basis from 18 June 2019 to 18 June 2020. The objective was to analyze inventory performance, classify products using ABC-XYZ analysis, identify critical inventory issues, and provide actionable recommendations for inventory policy and forecasting.
 
-This project analyzes one year of inventory data on a weekly basis to understand demand patterns, stock issues, and revenue distribution across products. The main goal is to identify which products matter most and how inventory decisions can be improved.
+🎯 Objectives
 
-What was done
-1. Revenue and Pareto Analysis
+Perform ABC analysis based on revenue contribution (Pareto Principle)
+Conduct XYZ analysis to measure demand variability and predictability
+Combine ABC and XYZ analysis to create an ABC-XYZ Matrix
+Identify current inventory health issues (Stockouts, Reorder Point violations, etc.)
+Analyze inventory turnover by demand variability segments
+Provide strategic recommendations for high-value, high-variability SKUs
+Develop demand forecasting insights
 
-First, I calculated:
 
-Annual quantity
-Annual revenue
-Revenue share
-Cumulative revenue
+📊 Key Findings
+1. ABC Analysis (Revenue Contribution)
 
-This was used to apply the Pareto principle (ABC analysis).
+34 items (11.22% of total products) generated 291 million in revenue
+51 items generated 85 million in revenue
+218 items generated 42 million in revenue
 
-Findings:
+→ 11.22% of products contributed 69.6% of total revenue, strongly validating the Pareto Principle (80/20 rule).
+2. Current Inventory Health
 
-34 items generated $291M revenue
-51 items generated $85M revenue
-218 items generated $42M revenue
-Around 11% of products generate ~70% of revenue
-2. Inventory Status
 280 items (92.4%) are below reorder point
-10 items (3.3%) are already out of stock
+10 items (3.3%) are completely out of stock and require immediate replenishment
 
-This shows a major understocking issue, especially considering lead times of 30–90 days.
+3. ABC-XYZ Matrix Analysis
+High-value products (Class A) show the following demand patterns:
 
-3. Weekly Demand Calculation
+Uniform demand: 27.6 million
+Variable demand: 13.5 million
+Uncertain demand: 5.94 million
 
-I created a weekly table and calculated:
+Average Inventory Turnover Ratio across the portfolio: 5.4
+Notably, AY SKUs (High Value + Variable Demand) generated 158.62 million in annual revenue.
+4. Demand Forecasting
+Using one year of weekly data (June 2019 – June 2020) with quarterly seasonality (13 weeks):
 
-Weekly demand (using DAX: CALCULATE + FILTER)
-Weekly sales amount (using LOOKUPVALUE)
+Point Forecast: 251,604 units per week
+95% Confidence Interval:
+Lower Bound: 114,573 units
+Upper Bound: 388,635 units
 
-This allowed me to track demand patterns per SKU over time.
+Uncertainty Spread: ±137,031 units (Symmetric)
 
-4. Demand Variability (XYZ Analysis)
+Key Observation: The wide confidence interval reflects the limitation of fitting a seasonal model on only one annual cycle.
 
-For each product, I calculated:
+🔍 Methodology
+Data Processing
 
-Average weekly demand
-Standard deviation
-Coefficient of variation (CV)
+Weekly sales and demand calculated using DAX (CALCULATE, FILTER)
+Weekly sales amount retrieved using LOOKUPVALUE
+Average weekly demand and Standard Deviation calculated per SKU
+Coefficient of Variation (CV) calculated to measure demand variability
+Product-wise CV ranks created for XYZ Analysis
 
-Then I ranked SKUs based on CV to classify them:
+Analysis Techniques
 
-X → stable demand
-Y → moderate variation
-Z → high variation
-5. ABC–XYZ Analysis
+ABC Analysis: Based on annual revenue and cumulative revenue share
+XYZ Analysis: Based on Coefficient of Variation of weekly demand
+ABC-XYZ Matrix: Combined classification
+Data modeling with relationships on SKU_ID
 
-I combined revenue importance (ABC) with demand variability (XYZ).
 
-Key observation:
+📌 Strategic Recommendations
+For AY SKUs (High Value + Variable Demand)
 
-High-value products include both stable and highly variable demand
-Some high-revenue items are not predictable, which makes them harder to manage
-6. Important Segment (AY SKUs)
-AY SKUs (high value + variable demand) generate about $158.62M annually
+Policy: Do not use standard fixed reorder points
+Implement dynamic reorder points recalculated monthly using rolling demand averages
+Assign a dedicated demand planner exclusively for the AY segment
 
-These cannot be managed with fixed reorder points.
+General Recommendations
 
-Suggestion:
+Immediate replenishment for the 10 out-of-stock items
+Urgent review and action for the 280 items currently below reorder point
+Improve forecasting accuracy by collecting more historical data (minimum 2–3 years recommended)
+Consider lead time variability (30–90 days) when setting safety stock and reorder points
 
-Use dynamic reorder points
-Update monthly using recent demand
-These items need closer monitoring
-7. Forecasting
 
-Using weekly data (1 year) with quarterly seasonality (13 weeks):
+🛠️ Tools & Technologies
 
-Forecast: 251,604 units/week
-Lower bound: 114,573
-Upper bound: 388,635
-
-The forecast range is wide, which shows uncertainty due to limited data (only one year).
-
-Data Modeling
-Created relationships using SKU_ID across tables
-Combined stock, sales, and weekly demand data
+Power BI (DAX for calculations and visualizations)
+Data Modeling (Star Schema / Relationships on SKU_ID)
+Statistical Analysis (Mean, Standard Deviation, Coefficient of Variation)
+ABC-XYZ Inventory Classification Framework
+Time Series Forecasting with Seasonality****
